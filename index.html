@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torexxx Creator - Создавайте веб-сайты без кода</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-base-100">
+    <!-- Header -->
+    <header class="bg-base-200/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="navbar">
+                <div class="navbar-start">
+                    <a class="btn btn-ghost text-xl" href="#">
+                        <span class="text-primary">Torexxx</span> Creator
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <div class="hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1">
+                            <li><a href="#features" class="hover:text-primary transition-colors">Возможности</a></li>
+                            <li><a href="#how-it-works" class="hover:text-primary transition-colors">Как это работает</a></li>
+                            <li><a href="#pricing" class="hover:text-primary transition-colors">Цены</a></li>
+                            <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary ml-4 hidden sm:flex">
+                        Начать бесплатно <i data-lucide="arrow-right" class="ml-2"></i>
+                    </button>
+                    <button class="btn btn-square btn-ghost lg:hidden" @click="mobileMenu = !mobileMenu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenu" x-transition class="lg:hidden bg-base-200" @click.away="mobileMenu = false">
+            <div class="container mx-auto px-4 py-4">
+                <ul class="menu menu-vertical space-y-2">
+                    <li><a href="#features" class="hover:text-primary transition-colors">Возможности</a></li>
+                    <li><a href="#how-it-works" class="hover:text-primary transition-colors">Как это работает</a></li>
+                    <li><a href="#pricing" class="hover:text-primary transition-colors">Цены</a></li>
+                    <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                    <li><button class="btn btn-primary mt-4 w-full">Начать бесплатно</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-[80vh] bg-gradient-to-br from-base-100 to-base-200/50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        Создавайте веб-сайты и приложения <span class="text-primary">без кода</span>
+                    </h1>
+                    <p class="text-lg mb-8 text-base-content/80 max-w-lg mx-auto lg:mx-0">
+                        Torexxx Creator позволяет создавать профессиональные веб-проекты в интуитивно понятном интерфейсе без необходимости писать код.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="btn btn-primary btn-lg">
+                            Начать бесплатно <i data-lucide="arrow-right" class="ml-2"></i>
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            Посмотреть демо <i data-lucide="play-circle" class="ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex justify-center lg:justify-start">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex -space-x-2">
+                                <img src="https://placehold.co/40x40/EEE/31343C" alt="User avatar" class="w-10 h-10 rounded-full border-2 border-white">
+                                <img src="https://placehold.co/40x40/EEE/31343C" alt="User avatar" class="w-10 h-10 rounded-full border-2 border-white">
+                                <img src="https://placehold.co/40x40/EEE/31343C" alt="User avatar" class="w-10 h-10 rounded-full border-2 border-white">
+                            </div>
+                            <span class="text-sm text-base-content/70">Присоединились 10,000+ пользователей</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                    <div class="mockup-browser border border-base-300 bg-base-200/50">
+                        <div class="mockup-browser-toolbar">
+                            <div class="input border border-base-300">https://torexxx-creator.com</div>
+                        </div>
+                        <div class="bg-base-100 p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="h-4 bg-base-300 rounded w-3/4"></div>
+                                <div class="h-4 bg-base-300 rounded w-1/2"></div>
+                                <div class="h-32 bg-gradient-to-r from-primary to-primary-focus rounded"></div>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="h-4 bg-base-300 rounded"></div>
+                                    <div class="h-4 bg-base-300 rounded"></div>
+                                    <div class="h-4 bg-base-300 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    Возможности
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Все, что нужно для создания веб-проектов</h2>
+                <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                    Полный набор инструментов для создания современных веб-сайтов и приложений без написания кода.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="layout" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Drag & Drop Интерфейс</h3>
+                        <p class="text-base-content/70">
+                            Интуитивно понятный визуальный редактор с перетаскиванием элементов для быстрого создания макетов.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="code" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Генерация чистого кода</h3>
+                        <p class="text-base-content/70">
+                            Автоматическая генерация оптимизированного HTML, CSS и JavaScript кода без лишних зависимостей.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="smartphone" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Адаптивный дизайн</h3>
+                        <p class="text-base-content/70">
+                            Автоматическая адаптация под все устройства с возможностью тонкой настройки для каждого размера экрана.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="database" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Интеграция с API</h3>
+                        <p class="text-base-content/70">
+                            Легкое подключение к любым внешним сервисам и API для создания полноценных веб-приложений.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Командная работа</h3>
+                        <p class="text-base-content/70">
+                            Совместная работа над проектами с возможностью комментирования и версиирования.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="card bg-base-200/50 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-body">
+                        <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="cloud" class="w-8 h-8 text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-xl mb-3">Облачное хранилище</h3>
+                        <p class="text-base-content/70">
+                            Все ваши проекты надежно хранятся в облаке с возможностью экспорта в любой момент.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-base-200/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    Процесс работы
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Как создать сайт за 3 простых шага</h2>
+                <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                    От идеи до готового проекта за несколько минут без технических навыков.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Step 1 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Выберите шаблон</h3>
+                    <p class="text-base-content/70 mb-6">
+                        Начните с одного из сотен готовых шаблонов или создайте проект с нуля на чистом холсте.
+                    </p>
+                    <div class="bg-base-100 p-4 rounded-lg shadow-sm">
+                        <img src="https://placehold.co/400x250/EEE/31343C" alt="Template selection" class="w-full rounded">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Настройте дизайн</h3>
+                    <p class="text-base-content/70 mb-6">
+                        Измените цвета, шрифты, добавьте свои изображения и контент с помощью простого интерфейса.
+                    </p>
+                    <div class="bg-base-100 p-4 rounded-lg shadow-sm">
+                        <img src="https://placehold.co/400x250/EEE/31343C" alt="Design customization" class="w-full rounded">
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Опубликуйте проект</h3>
+                    <p class="text-base-content/70 mb-6">
+                        Один клик - и ваш сайт в интернете. Или экспортируйте код для самостоятельной публикации.
+                    </p>
+                    <div class="bg-base-100 p-4 rounded-lg shadow-sm">
+                        <img src="https://placehold.co/400x250/EEE/31343C" alt="Project publishing" class="w-full rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-primary-focus text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Готовы создать свой первый проект?
+                    </h2>
+                    <p class="text-lg mb-8 opacity-90">
+                        Присоединяйтесь к тысячам пользователей, которые уже создают профессиональные веб-сайты без кода с помощью Torexxx Creator.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn btn-secondary btn-lg">
+                            Начать бесплатно <i data-lucide="arrow-right" class="ml-2"></i>
+                        </button>
+                        <button class="btn btn-outline btn-white btn-lg">
+                            Узнать больше <i data-lucide="info" class="ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden lg:block" data-aos="fade-left">
+                    <div class="mockup-phone border border-base-300/50">
+                        <div class="camera"></div>
+                        <div class="display">
+                            <div class="artboard artboard-demo phone-1 bg-base-100 p-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="text-sm font-medium">Torexxx Creator</div>
+                                    <div class="flex space-x-1">
+                                        <div class="w-1 h-1 bg-red-500 rounded-full"></div>
+                                        <div class="w-1 h-1 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-1 h-1 bg-green-500 rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="h-3 bg-base-300 rounded w-3/4"></div>
+                                    <div class="h-3 bg-base-300 rounded w-1/2"></div>
+                                    <div class="h-20 bg-gradient-to-r from-primary to-primary-focus rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    Отзывы
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Что говорят наши пользователи</h2>
+                <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                    Тысячи людей уже создали свои проекты с помощью Torexxx Creator.
+                </p>
+            </div>
+
+            <div class="swiper testimonial-swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="card bg-base-200/50 h-full">
+                            <div class="card-body">
+                                <div class="flex text-yellow-400 mb-4">
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                                <p class="mb-6 text-base-content/80">
+                                    "Torexxx Creator изменил мой подход к веб-разработке. Теперь я могу создавать сайты для своих клиентов в 5 раз быстрее, не жертвуя качеством."
+                                </p>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/50x50/EEE/31343C" alt="Alexey Petrov" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <div class="font-semibold">Алексей Петров</div>
+                                        <div class="text-sm text-base-content/60">Владелец веб-студии</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="card bg-base-200/50 h-full">
+                            <div class="card-body">
+                                <div class="flex text-yellow-400 mb-4">
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star-half" class="w-5 h-5"></i>
+                                </div>
+                                <p class="mb-6 text-base-content/80">
+                                    "Как маркетолог, я ценю скорость и гибкость. С Torexxx Creator я могу быстро создавать лендинги для своих кампаний без участия разработчиков."
+                                </p>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/50x50/EEE/31343C" alt="Maria Ivanova" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <div class="font-semibold">Мария Иванова</div>
+                                        <div class="text-sm text-base-content/60">Digital Маркетолог</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="card bg-base-200/50 h-full">
+                            <div class="card-body">
+                                <div class="flex text-yellow-400 mb-4">
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                                <p class="mb-6 text-base-content/80">
+                                    "Я никогда не думал, что смогу создать свой собственный интернет-магазин. Torexxx Creator сделал это возможным! Интерфейс настолько простой, что я разобрался за несколько часов."
+                                </p>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/50x50/EEE/31343C" alt="Dmitry Sokolov" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <div class="font-semibold">Дмитрий Соколов</div>
+                                        <div class="text-sm text-base-content/60">Предприниматель</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-base-200/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    Тарифы
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Выберите подходящий тариф</h2>
+                <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                    От бесплатного тарифа для начала до профессиональных решений для бизнеса.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Plan -->
+                <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-body">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Бесплатный</h3>
+                            <div class="text-4xl font-bold mb-2">0₽<span class="text-lg font-normal text-base-content/60">/месяц</span></div>
+                            <p class="text-sm text-base-content/70">Для начала работы и небольших проектов</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                До 3 проектов
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Базовые шаблоны
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                1ГБ хранилище
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Поддомен torexxx-creator.com
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">
+                            Начать бесплатно
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="card bg-primary text-primary-content shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Профессиональный</h3>
+                            <div class="text-4xl font-bold mb-2">990₽<span class="text-lg font-normal opacity-70">/месяц</span></div>
+                            <p class="text-sm opacity-70">Для профессиональных проектов и фрилансеров</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                Неограниченное количество проектов
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                Все премиум шаблоны
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                50ГБ хранилище
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                Подключение своего домена
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                Экспорт кода
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 mr-3"></i>
+                                Приоритетная поддержка
+                            </li>
+                        </ul>
+                        <button class="btn btn-secondary w-full">
+                            Выбрать Профессиональный
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-body">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Бизнес</h3>
+                            <div class="text-4xl font-bold mb-2">2,490₽<span class="text-lg font-normal text-base-content/60">/месяц</span></div>
+                            <p class="text-sm text-base-content/70">Для агентств и крупных проектов</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Все возможности Профессионального
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                200ГБ хранилище
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Командная работа (до 5 пользователей)
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Белый лейбл
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                Персональный менеджер
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-primary mr-3"></i>
+                                API доступ
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline btn-primary w-full">
+                            Выбрать Бизнес
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+                    Вопросы и ответы
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                    Не нашли ответ? Напишите нам, и мы поможем!
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="collapse collapse-arrow bg-base-200/50" data-aos="fade-up" data-aos-delay="100">
+                    <input type="checkbox" name="faq-accordion">
+                    <div class="collapse-title text-xl font-medium">
+                        Нужны ли технические навыки для работы с Torexxx Creator?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-base-content/70">
+                            Абсолютно нет! Torexxx Creator разработан специально для людей без технического образования. Весь процесс создания сайта происходит в визуальном редакторе с помощью перетаскивания элементов.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="collapse collapse-arrow bg-base-200/50" data-aos="fade-up" data-aos-delay="200">
+                    <input type="checkbox" name="faq-accordion">
+                    <div class="collapse-title text-xl font-medium">
+                        Можно ли экспортировать код созданного сайта?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-base-content/70">
+                            Да, начиная с тарифа "Профессиональный", вы можете экспортировать чистый HTML, CSS и JavaScript код вашего проекта для самостоятельной публикации или дальнейшей доработки.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="collapse collapse-arrow bg-base-200/50" data-aos="fade-up" data-aos-delay="300">
+                    <input type="checkbox" name="faq-accordion">
+                    <div class="collapse-title text-xl font-medium">
+                        Предоставляете ли вы хостинг для созданных сайтов?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-base-content/70">
+                            Да, все тарифные планы включают бесплатный хостинг на наших серверах. Вы также можете подключить свой собственный домен начиная с тарифа "Профессиональный".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="collapse collapse-arrow bg-base-200/50" data-aos="fade-up" data-aos-delay="400">
+                    <input type="checkbox" name="faq-accordion">
+                    <div class="collapse-title text-xl font-medium">
+                        Можно ли создавать интернет-магазины с помощью Torexxx Creator?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-base-content/70">
+                            Да, конечно! В Torexxx Creator есть специальные шаблоны и модули для создания интернет-магазинов с корзиной, каталогом товаров и интеграцией с платежными системами.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="collapse collapse-arrow bg-base-200/50" data-aos="fade-up" data-aos-delay="500">
+                    <input type="checkbox" name="faq-accordion">
+                    <div class="collapse-title text-xl font-medium">
+                        Как работает бесплатный тариф?
+                    </div>
+                    <div class="collapse-content">
+                        <p class="text-base-content/70">
+                            Бесплатный тариф позволяет создать до 3 проектов с использованием базовых шаблонов. Ваши сайты будут доступны по поддомену вида ваш-сайт.torexxx-creator.com. Это отличный способ опробовать платформу перед переходом на платный тариф.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-base-200 pt-20 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <a class="btn btn-ghost text-xl mb-4" href="#">
+                        <span class="text-primary">Torexxx</span> Creator
+                    </a>
+                    <p class="text-base-content/70 mb-6">
+                        Создавайте профессиональные веб-сайты и приложения без написания кода с помощью интуитивно понятного интерфейса.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="btn btn-square btn-outline btn-sm">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="btn btn-square btn-outline btn-sm">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="btn btn-square btn-outline btn-sm">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="btn btn-square btn-outline btn-sm">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Быстрые ссылки</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="link link-hover text-base-content/80 hover:text-primary">Возможности</a></li>
+                        <li><a href="#how-it-works" class="link link-hover text-base-content/80 hover:text-primary">Как это работает</a></li>
+                        <li><a href="#pricing" class="link link-hover text-base-content/80 hover:text-primary">Цены</a></li>
+                        <li><a href="#faq" class="link link-hover text-base-content/80 hover:text-primary">FAQ</a></li>
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">Блог</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Ресурсы</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">Документация</a></li>
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">Учебные материалы</a></li>
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">Сообщество</a></li>
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">Шаблоны</a></li>
+                        <li><a href="#" class="link link-hover text-base-content/80 hover:text-primary">API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Контакты</h4>
+                    <address class="not-italic space-y-3 text-base-content/80">
+                        <div class="flex items-start">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 mt-1"></i>
+                            <a href="mailto:info@torexxx-creator.com" class="link link-hover">info@torexxx-creator.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 mt-1"></i>
+                            <a href="tel:+74951234567" class="link link-hover">+7 (495) 123-45-67</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1"></i>
+                            <span>Москва, Россия</span>
+                        </div>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-base-300 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-base-content/60 text-sm">
+                    © 2023 Torexxx Creator. Все права защищены.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="link link-hover text-base-content/60 text-sm hover:text-primary">Политика конфиденциальности</a>
+                    <a href="#" class="link link-hover text-base-content/60 text-sm hover:text-primary">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 btn btn-circle btn-primary shadow-lg opacity-0 transition-opacity duration-300 z-40">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
